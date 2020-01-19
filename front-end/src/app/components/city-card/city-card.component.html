@@ -1,0 +1,21 @@
+<mat-card class="card-info">
+    <div style="width: 100%;" *ngIf="loading">
+        <mat-spinner style="margin:10% auto;" ></mat-spinner>
+    </div>
+    <div *ngIf="weather && !loading">
+        <mat-card-header>
+            <mat-card-title>{{ cityName }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>Temperatura actual: {{ weather.temperature | tempPipe : 'C' }} C°</mat-list-item>
+                <mat-list-item>Sensacion Termica: {{ weather.apparentTemperature | tempPipe: 'C' }} C°</mat-list-item>
+                <mat-list-item>Probablidad de Lluvia: {{ weather.precipProbability * 100}} %</mat-list-item>
+                <mat-list-item>Last Update {{ lastUpdate | date: 'medium' }}</mat-list-item>
+            </mat-list>            
+        </mat-card-content>
+    </div>
+    <div *ngIf="!weather && !loading">
+        <p>No hay data disponible</p>
+    </div>
+</mat-card>

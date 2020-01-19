@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  redis_server:
+    container_name: redis_server
+    image: redis
+    ports:
+      - "6379:6379"
+  backend_server:
+    container_name: backend_server
+    build: ./back-end
+    ports: 
+      - "3001:3000"
+    depends_on: 
+      - redis_server
+    environment: 
+      - NODE_ENV=prod
+  frontend_server:
+    container_name: frontend_server
+    build: ./front-end
+    ports:
+      - "8080:80"
