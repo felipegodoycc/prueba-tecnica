@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, retryWhen, delay, tap } from 'rxjs/operators';
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ForecastService {
-  apiUrl = 'http://localhost:3001/api/v1/clima'
+  apiUrl = enviroment.apiURL;
 
   constructor(private http: HttpClient) { }
 
