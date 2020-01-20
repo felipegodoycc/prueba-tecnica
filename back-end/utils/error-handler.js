@@ -23,7 +23,7 @@ exports.consoleError = (err,req,res,next) => {
         })
     }
     else {
-        err = JSON.parse(err);
+        if(typeof err === "string") err = JSON.parse(err);
         res.status(err.code).json({
             ok: false,
             error: err.error
