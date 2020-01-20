@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: "http://localhost:3001/api/v1/clima"
+  apiURL: "http://ifcomputing.com:3050/api/v1/clima"
 };

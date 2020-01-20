@@ -10,7 +10,7 @@ services:
     container_name: backend_server
     build: ./back-end
     ports: 
-      - "3001:3000"
+      - "3050:3000"
     depends_on: 
       - redis_server
     environment: 
