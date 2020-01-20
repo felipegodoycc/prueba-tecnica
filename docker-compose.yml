@@ -7,7 +7,7 @@ services:
     ports:
       - "6379:6379"
   backend_server:
-    container_name: backend_server
+    container_name: backend_prueba
     build: ./back-end
     ports: 
       - "3050:3000"
@@ -16,7 +16,7 @@ services:
     environment: 
       - NODE_ENV=prod
   frontend_server:
-    container_name: frontend_server
+    container_name: frontend_prueba
     build: ./front-end
     ports:
       - "8080:80"
